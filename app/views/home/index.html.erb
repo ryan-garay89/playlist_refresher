@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="<%=flash.empty? ? 'px-4 py-5 my-2 text-center' : 'px-4 pb-5 mb-5 text-center' %>">
+    <% flash.each do |type, msg| %>
+      <div class="<%=type.to_s === "success" ? 'alert alert-success mt-2 mb-4' : 'alert alert-danger mt-2 mb-4'%>">
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+  <h1 class="display-5 fw-bold">Welcome to the Playlist Refresher!</h1>
+  <div class="d-grid mt-2 gap-2 d-sm-flex justify-content-sm-center pt-2">
+    <%= button_to "Login with Spotify", '/auth/spotify', class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
